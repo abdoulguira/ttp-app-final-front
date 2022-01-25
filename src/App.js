@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
+import Movie from "./components/Movie"
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
