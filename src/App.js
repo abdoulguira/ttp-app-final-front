@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import MovieDetailPage from './components/MovieDetailPage'
 import SearchBar from './components/SearchBar'
-import NavBar from './components/navbar/NavBar';
+import NavBarBefore from './components/navbar/NavBarBefore';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import './App.css';
@@ -18,7 +18,7 @@ function App() {
     <Router>
           <div className="App">
             {/* search bar, log in, filter, goes here */}
-            <NavBar />
+            <NavBarBefore />
             <SearchBar />
             <Routes>
               <Route exact path="/" element={<HomePageElm/>}/>
