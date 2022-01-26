@@ -2,18 +2,19 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import MovieDetailPage from './components/MovieDetailPage'
+import SearchBar from './components/SearchBar'
 import './App.css';
-import Movie from "./components/Movie"
-import SignIn from './components/SignIn';
 
 function App() {
   const HomePageElm = () => (<HomePage />)
   const MovieDetailPageElm = () => (<MovieDetailPage />)
+
   return (
     <Router>
           <div className="App">
             <nav>sample nav</nav>
             <h1>search bar, log in, filter, goes here </h1>
+            <SearchBar />
             <Routes>
               <Route exact path="/" element={<HomePageElm/>}/>
               <Route exact path="/movie/:id" element={<MovieDetailPageElm/>}/>
