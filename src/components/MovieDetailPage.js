@@ -71,9 +71,9 @@ export default function MovieDetailPage(props){
               <div style={styles.mainInfoStyle}>
                 {movieDetail["tagline"] && <p style={styles.taglineStyle}>{movieDetail["tagline"]}</p>}
                 <br></br>
-                {movieDetail["budget"] && <p>Budget: {movieDetail["budget"]}</p>}
-                {movieDetail["revenue"] && <p>Revenue: {movieDetail["revenue"]}</p>}
-                {movieDetail["original_language"] && <p>Language: {movieDetail["original_language"]}</p>}
+                {movieDetail["budget"] == 0 ? <></> : <p>Budget: ${movieDetail["budget"]}</p>}
+                {movieDetail["revenue"] == 0 ? <></> : <p>Revenue: ${movieDetail["revenue"]}</p>}
+                {movieDetail["original_language"] && <p>Language: {movieDetail["original_language"].toUpperCase()}</p>}
                 {movieDetail["production_companies"] && <p>Production Companies: </p>}
                 <ul>
                 {movieDetail["production_companies"] && movieDetail["production_companies"].map((c) => <p>{c['name']}</p>)}
@@ -116,7 +116,7 @@ const styles = {
     },
     titleRow:{
       display: "flex",
-      marginTop: '-80px',
+      marginTop: '-60px',
       marginRight: 'auto',
       justifyContent: "space-between",
 

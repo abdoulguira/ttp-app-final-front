@@ -6,8 +6,8 @@ const imageAPI = "https://image.tmdb.org/t/p/w500"
 
 
 export default function MovieCard(props) {
-  const [curMovie, setCurMovie] = useState("")
-  const [selectedMovie, setSelectedMovie] = useState(false)
+  // const [curMovie, setCurMovie] = useState("")
+  // const [selectedMovie, setSelectedMovie] = useState(false)
 
   // useEffect(()=>{
   //   setCurMovie(props.)
@@ -20,7 +20,7 @@ export default function MovieCard(props) {
   // }
 
   return (
-      <div className="cardImg" style={styles.cardStyle} onClick={ () => console.log("clicked")}>
+      <div className="cardImg" style={styles.cardStyle} onClick={ () => window.scrollTo(0, 0)}>
         <Link to={{
                   pathname: `/movie/${props.movieData['id']}`,
                   // state: [{movieId: props.movieData == undefined ? {} : props.movieData["id"]}]
