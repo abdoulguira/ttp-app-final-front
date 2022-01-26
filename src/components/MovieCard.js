@@ -24,14 +24,14 @@ export default function MovieCard(props) {
         <Link to={{
                   pathname: `/movie/${props.movieData['id']}`,
                   // state: [{movieId: props.movieData == undefined ? {} : props.movieData["id"]}]
-        }}>
+        }} style={{textDecoration: 'none'}}>
           <img src={`${imageAPI}${props.movieData["poster_path"]}`} 
             alt="movie-profile" 
             width="300px" 
             style={styles.imgStyle}
             />
 
-          <p>{props.movieData["title"]}</p>
+          <p style={styles.titleStyle}>{props.movieData["title"]}</p>
           </Link>
       </div>
   );
@@ -47,5 +47,9 @@ const styles = {
    },
    imgStyle:{
         cursor: 'pointer'
+   },
+   titleStyle: {
+     color: "white",
+     fontSize: "18px",
    }
 }
