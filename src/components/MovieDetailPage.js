@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import MovieCard from "./MovieCard"
 
 
 
 
 const imageAPI = "https://image.tmdb.org/t/p/w500"
 
+const similarAPI = "https://api.themoviedb.org/3/movie/32329/similar?api_key=9b790665c935b1e0e1913340b809510c"
+
 
 export default function MovieDetailPage(props){
     const [movieDetail, setMovieDetail] = useState({})
+    const [similarMovies, setSimilarMovies] = useState([])
     const params = useParams()
 
     useEffect(() => {
         fetchMovieDetail(params.id)
+        fetchSimilarMovies(params.id)
+
+        document.getElementsByClassName("suggestionSection").scrollLeft = 0
+        // console.log( document.getElementsByClassName("suggestionSection").scrollLeft + 1000)
+
     }, [params.id])
 
     function fetchMovieDetail(movieId){
+
         // can be moved to backend 
         const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=04c35731a5ee918f014970082a0088b1`
         fetch(apiUrl)
@@ -24,15 +34,25 @@ export default function MovieDetailPage(props){
             .catch(err => console.log(err))
     }
 
+    function fetchSimilarMovies(movieId){
+      const apiUrl = "https://api.themoviedb.org/3/movie/"+movieId+"/similar?api_key=9b790665c935b1e0e1913340b809510c"
+
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(res => setSimilarMovies(res["results"]))
+        .catch(err => console.log(err))
+    }
+
     return(
+      <div>
         <div style={styles.detailSection}>
             <div style={styles.imageSection}>
                 {movieDetail["poster_path"] && <img src={`${imageAPI}${movieDetail["poster_path"]}`} 
                                                       width="400px"
                                                       style={{marginBottom: "10px"}}/>}
                                                       
-                {movieDetail["backdrop_path"] && <img src={`${imageAPI}${movieDetail["backdrop_path"]}`} 
-                                                      width="400px"/>}
+                {/* {movieDetail["backdrop_path"] && <img src={`${imageAPI}${movieDetail["backdrop_path"]}`} 
+                                                      width="400px"/>} */}
 
             </div>
             <div style={styles.infoSection}>
@@ -66,22 +86,29 @@ export default function MovieDetailPage(props){
               </div>
             </div>
         </div>
+        <div>
+          <p style={styles.suggestText}>Movies You May Also Like</p>
+        </div>
+            <div className="suggestionSection" style={styles.suggestionMovies}>
+              {similarMovies.map(m => <MovieCard style={{width: "100%"}}movieData={m}/>)}
+            </div>
+        </div>
     )
 
 }
 
 const styles = {
     detailSection:{
-      height: "1000px",
+      height: "650px",
       display: "flex",
-      marginLeft: "8%",
-      marginRight: "8%",
+      marginLeft: "15%",
+      marginRight: "15%",
       marginTop: "100px",
       justifyContent: "space-between",
     },
     imageSection: {
       display: "block",
-      marginRight: "520x"
+      marginRight: "50px"
     },
     infoSection:{
       width: "40%",
@@ -97,7 +124,7 @@ const styles = {
     titleStyle:{
       width: '1000px',
       fontSize: "40px",
-      letterSpacing: "0.1em",
+      letterSpacing: "0.04em",
       fontWeight: "500",
       marginRight: "40px",
       textAlign:"Left"
@@ -137,11 +164,12 @@ const styles = {
       textAlign: 'center',
       paddingLeft: "10px",
       paddingRight: "10px",
-      paddingTop: '0.5px',
-      paddingBottom: '0.5px',
+      textAlign: 'center',
       border: "1px solid grey",
       borderRadius: "20px",
-      marginRight: "10px"
+      marginRight: "2px",
+      textAlign: "center",
+      verticalAlign: "middle"
     },
     mainInfoStyle: {
       display: "block",
@@ -151,7 +179,24 @@ const styles = {
     taglineStyle: {
       fontSize: '20px',
       letterSpacing: "1.2px"
-    }
+    },
+    suggestText:{
+      fontSize: "28px",
+      textAlign: "left",
+      marginLeft: "15%",
+      marginRight: "15%"
 
+    },
+
+    suggestionMovies:{
+      display: "flex",
+      height: '550px',
+      marginLeft: '15%',
+      marginRight: '18%',
+      // overflowX: 'hidden',
+      overflowY: 'scroll',
+      whiteSpace: 'nowrap'
+    }
+    
   
 }

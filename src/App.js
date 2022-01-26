@@ -141,6 +141,7 @@ function App() {
     fetch(api + searchTerm)
     .then(response => response.json())
     .then(data => setMovieData(data['results']));
+
   }, [searchTerm])
 
   const HomePageElm = () => (<HomePage movieData={movieData}/>)
