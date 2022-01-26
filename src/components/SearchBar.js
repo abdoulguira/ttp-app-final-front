@@ -5,6 +5,7 @@ export default function SearchBar() {
 
   const handleOnSumbit = (e) => {
     e.preventDefault();
+
   }
 
   const handleOnChange = (e) => {
@@ -12,7 +13,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="App">
+    <div className="search">
       <header>
         <form onSubmit={handleOnSumbit}>
           <input 
