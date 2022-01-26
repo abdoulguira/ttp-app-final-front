@@ -14,4 +14,19 @@ code {
 
 .link {
   margin: 10px;
+  color: white;
 }
+
+.search {
+  margin: 10px;
+}
+
+.link-homepage {
+  font-size: 50px;
+  color: white;
+}
+
+.input {
+  margin: 20px;
+}
+
