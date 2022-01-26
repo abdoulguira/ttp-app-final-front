@@ -2,7 +2,8 @@
   text-align: center;
   background: rgb(89,88,105);
   background: linear-gradient(rgb(120, 119, 119) 0%, rgb(53, 53, 53) 26%, rgb(0, 0, 0) 100%);
-  color: white
+  color: white;
+  padding: 10px;
 }
 
 .cardImg > img:hover{
