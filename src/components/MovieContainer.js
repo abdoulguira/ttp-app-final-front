@@ -20,8 +20,7 @@ const styles = {
         display: "flex",
         flexWrap: "wrap",
         paddingLeft: 0,
-        marginTop: "200px",
-        marginLeft: '20%',
-        marginRight: '20%',
+        marginTop: "50px",
+        margin: 0
     }
 }
