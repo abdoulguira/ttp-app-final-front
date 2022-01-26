@@ -27,9 +27,15 @@ code {
 }
 
 .input {
-  margin: 20px;
+  float: right;
 }
 
 .login-page {
   padding-bottom: 100%;
+}
+
+.form {
+  font-size: 20px;
+  margin: auto;
+  width: 400px;
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 export default function SearchBar(props) {
-  const [searchTerm, setSearchTerm] = useState('Shark');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() =>{
     props.setSearchTerm(searchTerm == "" ? "brooklyn" : searchTerm)
