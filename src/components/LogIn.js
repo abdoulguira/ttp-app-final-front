@@ -5,6 +5,7 @@ export default function LogIn() {
     return (
         <div className="login-page">
             <h1>Log In Page</h1>
+                <div className="form">
                     <label className='label'>Username: </label>
                     <input
                         className='input' 
@@ -18,6 +19,7 @@ export default function LogIn() {
                         type='password' 
                     /> <br></br>
                     <input type='submit' value='Login'></input>
+                </div>
         </div>
     );
 }
