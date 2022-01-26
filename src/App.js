@@ -1,34 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import MovieDetailPage from './components/MovieDetailPage'
 import './App.css';
 import Movie from "./components/Movie"
 import SignIn from './components/SignIn';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleOnSumbit = (e) => {
-    e.preventDefault();
-  }
-
-  const handleOnChange = (e) => {
-    setSearchTerm(e.target.value);
-  }
-
+  const HomePageElm = () => (<HomePage />)
+  const MovieDetailPageElm = () => (<MovieDetailPage />)
   return (
-    <div className="App">
-      <header>
-        <h1>Group 10 is working on the final App</h1>
-        <form onSubmit={handleOnSumbit}>
-          <input 
-            className = "search" 
-            type="text" 
-            placeholder='Search...'
-            value={searchTerm}
-            onChange={handleOnChange}
-          />
-        </form>
-      </header>
-    </div>
+    <Router>
+          <div className="App">
+            <nav>sample nav</nav>
+            <h1>search bar, log in, filter, goes here </h1>
+            <Routes>
+              <Route exact path="/" element={<HomePageElm/>}/>
+              <Route exact path="/movie/:id" element={<MovieDetailPageElm/>}/>
+            </Routes>
+
+          </div>
+
+
+
+    </Router>
+
   );
 }
 
