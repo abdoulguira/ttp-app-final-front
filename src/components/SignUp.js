@@ -5,6 +5,7 @@ export default function SignUp() {
     return (
         <div className="login-page">
             <h1>Sign Up Page</h1>
+                <div className="form">
                     <label className='label'>Enter Username: </label>
                     <input
                         className='input' 
@@ -25,6 +26,7 @@ export default function SignUp() {
                         type='password' 
                     /> <br></br>
                     <input type='submit' value='Sign Up'></input>
+                </div>
         </div>
     );
 }
