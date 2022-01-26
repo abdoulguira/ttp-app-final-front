@@ -130,17 +130,18 @@ const sampleData = [{
                       },
 ]
 
-const api = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=smart`
+const api = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=`
 // need to link to backend with cors
 
 function App() {
   const [movieData, setMovieData] = useState([])
+  const [searchTerm, setSearchTerm] = useState("smart")
 
   useEffect(() => {
-    fetch(api)
+    fetch(api + searchTerm)
     .then(response => response.json())
     .then(data => setMovieData(data['results']));
-  }, [])
+  }, [searchTerm])
 
   const HomePageElm = () => (<HomePage movieData={movieData}/>)
   const MovieDetailPageElm = () => (<MovieDetailPage />)
@@ -152,7 +153,7 @@ function App() {
           <div className="App">
             {/* search bar, log in, filter, goes here */}
             <NavBarBefore />
-            <SearchBar />
+            <SearchBar setSearchTerm={setSearchTerm}/>
             <Routes>
               <Route exact path="/" element={<HomePageElm/>}/>
               <Route exact path="/movie/:id" element={<MovieDetailPageElm/>}/>

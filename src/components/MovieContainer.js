@@ -9,7 +9,7 @@ export default function MovieContainer(props) {
 
   return (
       <div style={styles.movieContainerStyle}>
-          {props.movieData.map((data) => <MovieCard key={data.id} movieData={data}/> )} 
+        {props.movieData.map((data) => data.poster_path && <MovieCard key={data.id} movieData={data}/> )} 
       </div>
   );
 }

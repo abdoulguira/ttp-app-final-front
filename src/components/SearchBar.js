@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
 
-export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('');
+export default function SearchBar(props) {
+  const [searchTerm, setSearchTerm] = useState('Shark');
+
+  useEffect(() =>{
+    props.setSearchTerm(searchTerm == "" ? "brooklyn" : searchTerm)
+  }, [searchTerm])
 
   const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="
 
