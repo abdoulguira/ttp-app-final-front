@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar'
 import NavBarBefore from './components/navbar/NavBarBefore';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
+import Footer from "./components/Footer"
 import './App.css';
 
 
@@ -40,6 +41,7 @@ function App() {
               <Route exact path="/login" element={<LogInElm/>}/>
               <Route exact path="/signup" element={<SignUpElm/>}/>
             </Routes>
+            <Footer />
           </div>
     </Router>
   );
