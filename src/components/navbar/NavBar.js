@@ -6,8 +6,8 @@ export default function NavBar() {
         <nav className='navbar'>
             <h1>MovieWorld App</h1>
             <div>
-                <Link className='link' to="/Login">LOG IN</Link>
-                <Link className='link' to="/SignUp">SIGN UP</Link>
+                <Link className='link' to="/login">LOG IN</Link>
+                <Link className='link' to="/signup">SIGN UP</Link>
             </div>
         </nav>
     );
