@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 
 const newUserAPI = "http://localhost:8001/users/"
+const loggedInAPI = "http://localhost:3000/usr"
+
 export default function SignUp() {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
@@ -50,7 +52,7 @@ export default function SignUp() {
             }
             else{
                 console.log("created user successfully")
-                // lead to main page
+                window.location.href = loggedInAPI+`/${username}/true`
             }
         } 
         )

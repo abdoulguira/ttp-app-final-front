@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import MovieCard from "./MovieCard"
 
 const imageAPI = "https://image.tmdb.org/t/p/w500"
@@ -35,7 +35,9 @@ export default function MovieDetailPage(props){
     }
 
     return(
+      
       <div>
+        <Link className='link-homepage' to="/">MovieWorld App</Link>
         <div style={styles.detailSection}>
             <div style={styles.imageSection}>
                 {movieDetail["poster_path"] && <img src={`${imageAPI}${movieDetail["poster_path"]}`} 
