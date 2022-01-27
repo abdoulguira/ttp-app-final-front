@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Navigate, useParams } from "react-router-dom"
 
-const userAPI = "http://localhost:8001/users/"
+const userAPI = "https://ttp-app-final-back.herokuapp.com/users/"
 
 export default function LogIn() {
 

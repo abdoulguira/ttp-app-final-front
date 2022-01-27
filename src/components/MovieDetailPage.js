@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom"
 import MovieCard from "./MovieCard"
 
 const imageAPI = "https://image.tmdb.org/t/p/w500"
-const similarAPI = "http://localhost:8001/movie/similar/"
-const detailAPI = "http://localhost:8001/movie/detail/" 
+const similarAPI = "https://ttp-app-final-back.herokuapp.com/movie/similar/"
+const detailAPI = "https://ttp-app-final-back.herokuapp.com/movie/detail/" 
 
 export default function MovieDetailPage(props){
     const [movieDetail, setMovieDetail] = useState({})

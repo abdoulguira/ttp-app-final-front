@@ -5,8 +5,8 @@ import NavBarAfter from './navbar/NavBarAfter';
 import NavBarBefore from './navbar/NavBarBefore';
 import SearchBar from './SearchBar'
 
-const trendingApi = "http://localhost:8001/movie/popular"
-const getMovieApi = "http://localhost:8001/getMovies/"
+const trendingApi = "https://ttp-app-final-back.herokuapp.com/movie/popular"
+const getMovieApi = "https://ttp-app-final-back.herokuapp.com/getMovies/"
 
 export default function HomePage(props){
     const [movieData, setMovieData] = useState([])

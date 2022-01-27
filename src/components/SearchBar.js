@@ -7,7 +7,7 @@ export default function SearchBar(props) {
     props.setSearchTerm(searchTerm)
   }, [searchTerm])
 
-  const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="
+  const SEARCH_API = "https://ttp-app-final-back.herokuapp.com/getMovies/"
 
   const handleOnSumbit = (e) => {
     e.preventDefault();

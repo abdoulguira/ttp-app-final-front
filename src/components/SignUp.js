@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
-const newUserAPI = "http://localhost:8001/users/"
-const loggedInAPI = "http://localhost:3000/usr"
+const newUserAPI = "https://ttp-app-final-back.herokuapp.com/users/"
+const loggedInAPI = "https://ttp-app-final-back.herokuapp.com/usr"
 
 export default function SignUp() {
     const [username, setUsername] = useState("")
