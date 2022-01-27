@@ -7,6 +7,8 @@ export default function NavBarAfter() {
             <div>
                 <Link className='link-homepage' to="/">MovieWorld App</Link>
                 <br></br>
+                <h2>Welcome, user!</h2> 
+                {/* user needs to be replaced with username that logs in*/}
             </div>
         </nav>
     );

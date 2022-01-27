@@ -23,7 +23,7 @@ export default function SearchBar(props) {
   }
 
   return (
-    <div className="search">
+    <div className="search-bar">
       <header>
         <form onSubmit={handleOnSumbit}>
           <input 
