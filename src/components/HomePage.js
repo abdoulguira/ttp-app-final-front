@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import MovieContainer from "./MovieContainer"
 import SearchBar from './SearchBar'
 
-const api = `https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=`
-// need to link to backend with cors
+const trendingApi = "http://localhost:8001/movie/popular"
+const getMovieApi = "http://localhost:8001/getMovies/"
 
 export default function HomePage(){
     const [movieData, setMovieData] = useState([])
-    const [searchTerm, setSearchTerm] = useState("smart")
+    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
-        fetch(api + searchTerm)
+        fetch(searchTerm == "" ? trendingApi : getMovieApi + searchTerm)
         .then(response => response.json())
         .then(data => setMovieData(data['results']));
     }, [searchTerm])

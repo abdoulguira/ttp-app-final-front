@@ -6,19 +6,6 @@ const imageAPI = "https://image.tmdb.org/t/p/w500"
 
 
 export default function MovieCard(props) {
-  // const [curMovie, setCurMovie] = useState("")
-  // const [selectedMovie, setSelectedMovie] = useState(false)
-
-  // useEffect(()=>{
-  //   setCurMovie(props.)
-
-  // }, [])
-
-
-  // if(selectedMovie){
-  //   return (<Navigate replace to={`../movie/${curId}`}/>)
-  // }
-
   return (
       <div className="cardImg" style={styles.cardStyle} onClick={ () => window.scrollTo(0, 0)}>
         <Link to={{
@@ -37,16 +24,15 @@ export default function MovieCard(props) {
   );
 }
 
-
 const styles = {
    cardStyle:{
-       marginLeft: "10px",
-       marginTop: "50px",
-       marginRight: 'auto',
-       cursor: "pointer"
+      marginLeft: "10px",
+      marginTop: "50px",
+      marginRight: 'auto',
+      cursor: "pointer"
    },
    imgStyle:{
-        cursor: 'pointer'
+    cursor: 'pointer'
    },
    titleStyle: {
      color: "white",

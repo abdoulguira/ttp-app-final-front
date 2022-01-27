@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MovieCard from './MovieCard';
-
-
-
-
 
 export default function MovieContainer(props) {
 
@@ -13,7 +9,6 @@ export default function MovieContainer(props) {
       </div>
   );
 }
-
 
 const styles = {
     movieContainerStyle: {

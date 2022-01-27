@@ -2,13 +2,9 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import MovieCard from "./MovieCard"
 
-
-
-
 const imageAPI = "https://image.tmdb.org/t/p/w500"
-
-const similarAPI = "https://api.themoviedb.org/3/movie/32329/similar?api_key=9b790665c935b1e0e1913340b809510c"
-
+const similarAPI = "http://localhost:8001/movie/similar/"
+const detailAPI = "http://localhost:8001/movie/detail/" 
 
 export default function MovieDetailPage(props){
     const [movieDetail, setMovieDetail] = useState({})
@@ -18,16 +14,12 @@ export default function MovieDetailPage(props){
     useEffect(() => {
         fetchMovieDetail(params.id)
         fetchSimilarMovies(params.id)
-
         document.getElementsByClassName("suggestionSection").scrollLeft = 0
-        // console.log( document.getElementsByClassName("suggestionSection").scrollLeft + 1000)
 
     }, [params.id])
 
     function fetchMovieDetail(movieId){
-
-        // can be moved to backend 
-        const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=04c35731a5ee918f014970082a0088b1`
+        const apiUrl = detailAPI+movieId
         fetch(apiUrl)
             .then(res => res.json())
             .then(res => setMovieDetail(res))
@@ -35,8 +27,7 @@ export default function MovieDetailPage(props){
     }
 
     function fetchSimilarMovies(movieId){
-      const apiUrl = "https://api.themoviedb.org/3/movie/"+movieId+"/similar?api_key=9b790665c935b1e0e1913340b809510c"
-
+      const apiUrl = similarAPI+movieId
       fetch(apiUrl)
         .then(res => res.json())
         .then(res => setSimilarMovies(res["results"]))
@@ -50,9 +41,6 @@ export default function MovieDetailPage(props){
                 {movieDetail["poster_path"] && <img src={`${imageAPI}${movieDetail["poster_path"]}`} 
                                                       width="400px"
                                                       style={{marginBottom: "10px"}}/>}
-                                                      
-                {/* {movieDetail["backdrop_path"] && <img src={`${imageAPI}${movieDetail["backdrop_path"]}`} 
-                                                      width="400px"/>} */}
 
             </div>
             <div style={styles.infoSection}>
@@ -90,7 +78,7 @@ export default function MovieDetailPage(props){
           <p style={styles.suggestText}>Movies You May Also Like</p>
         </div>
             <div className="suggestionSection" style={styles.suggestionMovies}>
-              {similarMovies.map(m => <MovieCard style={{width: "100%"}}movieData={m}/>)}
+              {similarMovies.map(m => <MovieCard key={m['id']} style={{width: "100%"}} movieData={m}/>)}
             </div>
         </div>
     )
