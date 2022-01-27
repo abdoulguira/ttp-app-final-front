@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import MovieDetailPage from './components/MovieDetailPage'
-import SearchBar from './components/SearchBar'
 import NavBarBefore from './components/navbar/NavBarBefore';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
