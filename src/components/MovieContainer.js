@@ -15,7 +15,7 @@ const styles = {
         display: "flex",
         flexWrap: "wrap",
         paddingLeft: 0,
-        marginTop: "50px",
+        // marginTop: "50px",
         margin: 0,
         // marginLeft: '20%',
         // marginRight: '20%',
