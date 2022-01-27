@@ -27,9 +27,9 @@ export default function MovieCard(props) {
 const styles = {
    cardStyle:{
       marginLeft: "10px",
-      marginTop: "50px",
+      marginTop: "30px",
       marginRight: 'auto',
-      cursor: "pointer"
+      cursor: "pointer",
    },
    imgStyle:{
     cursor: 'pointer'

@@ -87,49 +87,49 @@ export default function MovieDetailPage(props){
 
 const styles = {
     detailSection:{
-      height: "650px",
+      height: "700px",
       display: "flex",
       marginLeft: "15%",
       marginRight: "15%",
-      marginTop: "100px",
-      justifyContent: "space-between",
+      marginTop: "50px",
+      // justifyContent: "space-between",
     },
     imageSection: {
       display: "block",
       marginRight: "50px"
     },
     infoSection:{
-      width: "40%",
+      width: "50%",
       marginRight: "100px"
     },
     titleRow:{
       display: "flex",
       marginTop: '-60px',
-      marginRight: 'auto',
+      // marginRight: 'auto',
       justifyContent: "space-between",
 
     },
     titleStyle:{
-      width: '1000px',
+      width: '350px',
       fontSize: "40px",
       letterSpacing: "0.04em",
       fontWeight: "500",
       marginRight: "40px",
-      textAlign:"Left"
-      // whiteSpace: 'nowrap'
+      textAlign:"Left",
+      //whiteSpace: 'nowrap'
 
 
     },
     rateStyle: {
-      fontSize: "40px",
+      fontSize: "30px",
       letterSpacing: "0.02em",
       whiteSpace: 'nowrap'
     },
     voteCountStyle:{
       whiteSpace: 'nowrap',
       marginBottom: 'auto',
-      marginTop: '68px',
-      marginLeft: '10px',
+      marginTop: '60px',
+      // marginLeft: '10px',
       marginRight: 'auto'
     },
     subInfoStyle:{
@@ -144,7 +144,7 @@ const styles = {
     },
     runtimeStyle:{
       paddingLeft: "10px",
-      paddingRight: "50px"
+      paddingRight: "10px"
 
     },
 
@@ -169,21 +169,21 @@ const styles = {
       letterSpacing: "1.2px"
     },
     suggestText:{
+      marginTop: "10%",
       fontSize: "28px",
       textAlign: "left",
       marginLeft: "15%",
-      marginRight: "15%"
-
+      marginRight: "15%",
     },
 
     suggestionMovies:{
       display: "flex",
-      height: '550px',
+      height: '100%',
       marginLeft: '15%',
       marginRight: '18%',
-      // overflowX: 'hidden',
-      overflowY: 'scroll',
-      whiteSpace: 'nowrap'
+      overflowX: 'scroll',
+      overflowY: 'hidden',
+      
     }
     
   
