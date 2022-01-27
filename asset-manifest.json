@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ttp-app-final-front/static/css/main.d1b05096.chunk.css",
-    "main.js": "/ttp-app-final-front/static/js/main.eae5c00d.chunk.js",
-    "main.js.map": "/ttp-app-final-front/static/js/main.eae5c00d.chunk.js.map",
-    "runtime~main.js": "/ttp-app-final-front/static/js/runtime~main.dfa5e84b.js",
-    "runtime~main.js.map": "/ttp-app-final-front/static/js/runtime~main.dfa5e84b.js.map",
-    "static/js/2.6371ef25.chunk.js": "/ttp-app-final-front/static/js/2.6371ef25.chunk.js",
-    "static/js/2.6371ef25.chunk.js.map": "/ttp-app-final-front/static/js/2.6371ef25.chunk.js.map",
-    "static/js/3.0ad1fd9d.chunk.js": "/ttp-app-final-front/static/js/3.0ad1fd9d.chunk.js",
-    "static/js/3.0ad1fd9d.chunk.js.map": "/ttp-app-final-front/static/js/3.0ad1fd9d.chunk.js.map",
+    "main.css": "/ttp-app-final-front/static/css/main.52a68ca9.chunk.css",
+    "main.js": "/ttp-app-final-front/static/js/main.8f6626df.chunk.js",
+    "main.js.map": "/ttp-app-final-front/static/js/main.8f6626df.chunk.js.map",
+    "runtime~main.js": "/ttp-app-final-front/static/js/runtime~main.b51ec373.js",
+    "runtime~main.js.map": "/ttp-app-final-front/static/js/runtime~main.b51ec373.js.map",
+    "static/js/2.06e1d36e.chunk.js": "/ttp-app-final-front/static/js/2.06e1d36e.chunk.js",
+    "static/js/2.06e1d36e.chunk.js.map": "/ttp-app-final-front/static/js/2.06e1d36e.chunk.js.map",
+    "static/js/3.68b36b5f.chunk.js": "/ttp-app-final-front/static/js/3.68b36b5f.chunk.js",
+    "static/js/3.68b36b5f.chunk.js.map": "/ttp-app-final-front/static/js/3.68b36b5f.chunk.js.map",
     "index.html": "/ttp-app-final-front/index.html",
-    "precache-manifest.9719d1e45d9dc97c06693a1dfcacfb31.js": "/ttp-app-final-front/precache-manifest.9719d1e45d9dc97c06693a1dfcacfb31.js",
+    "precache-manifest.2a17a043073ff79658f49d5e211adb13.js": "/ttp-app-final-front/precache-manifest.2a17a043073ff79658f49d5e211adb13.js",
     "service-worker.js": "/ttp-app-final-front/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/ttp-app-final-front/static/css/main.d1b05096.chunk.css.map"
+    "static/css/main.52a68ca9.chunk.css.map": "/ttp-app-final-front/static/css/main.52a68ca9.chunk.css.map"
   }
 }
