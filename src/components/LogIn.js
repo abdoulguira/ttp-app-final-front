@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Navigate, useParams } from "react-router-dom"
 
 const userAPI = "http://localhost:8001/users/"
 
@@ -6,7 +7,7 @@ export default function LogIn() {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    // const [logInSuccess, setLoginSuceess] =  navigate ... 
+    const [logInSuccess, setLoginSuceess] =  useState(false)
 
 
     function handleUsername(e){
@@ -19,18 +20,32 @@ export default function LogIn() {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(username)
+        if(username == ""){
+            alert("enter username")
+            return
+        }
+        else if(username == ""){
+            alert("enter password")
+            return 
+        }
         console.log(password)
         fetch(userAPI+username+'/'+password)
             .then(res => {
                 if(res.status === 404)
-                    console.log("no user found")
+                    alert("no user found")
                 if(res.status === 403)
-                    console.log("wrong password")
-                if(res.status === 200)
+                    alert("Wrong Password")
+                if(res.status === 200){
                     console.log("logging successfully")
+                    setLoginSuceess(true)
+                }
             })
     }
+    
+    if (logInSuccess) {
+        return (<Navigate replace to={`/usr/${username}/${true}`} state={username}/>)
+    }
+
 
     return (
         <div className="login-page">

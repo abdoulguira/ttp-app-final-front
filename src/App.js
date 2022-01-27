@@ -12,10 +12,12 @@ import './App.css';
 
 const api = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="
 
-function App() {
+function App(props) {
 
   const [movieData, setMovieData] = useState([])
   const [searchTerm, setSearchTerm] = useState("smart")
+
+
 
   useEffect(() => {
     fetch(api + searchTerm)
@@ -32,12 +34,15 @@ function App() {
 
   return (
     <Router>
-          <div className="App">
+          <div className="App" >
             {/* search bar, log in, filter, goes here */}
-            <NavBarBefore />
+            {/* <div id="dy-nav">
+              {loggedIn ? <NavBarAfter setLoggedIn={setLoggedIn} /> :<NavBarBefore />}
+            </div> */}
             {/* <NavBarAfter /> will be used when the user enters login*/}
             <Routes>
               <Route exact path="/" element={<HomePageElm/>}/>
+              <Route exact path="/usr/:username/:auth" element={<HomePageElm/>}/>
               <Route exact path="/movie/:id" element={<MovieDetailPageElm/>}/>
               <Route exact path="/login" element={<LogInElm/>}/>
               <Route exact path="/signup" element={<SignUpElm/>}/>
