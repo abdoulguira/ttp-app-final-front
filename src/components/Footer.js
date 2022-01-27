@@ -15,8 +15,9 @@ const styles = {
         left: "0px",
         bottom: "0px",
         width: "100%",
-        backgroundColor: "black",
+        // backgroundColor: "black",
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        paddingBottom: "100%"
     }
 }
