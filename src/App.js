@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import MovieDetailPage from './components/MovieDetailPage'
 import NavBarBefore from './components/navbar/NavBarBefore';
+import NavBarAfter from './components/navbar/NavBarAfter';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import Footer from "./components/Footer"
@@ -34,6 +35,7 @@ function App() {
           <div className="App">
             {/* search bar, log in, filter, goes here */}
             <NavBarBefore />
+            {/* <NavBarAfter /> will be used when the user enters login*/}
             <Routes>
               <Route exact path="/" element={<HomePageElm/>}/>
               <Route exact path="/movie/:id" element={<MovieDetailPageElm/>}/>
