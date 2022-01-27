@@ -35,9 +35,13 @@ export default function LogIn() {
                     alert("no user found")
                 if(res.status === 403)
                     alert("Wrong Password")
-                if(res.status === 200){
+                if(res.status === 200 && res.body["name"] == "SequelizeConnectionRefusedError"){
+                    alert("Not able to connect to database")
+                }
+                if(res.status === 200 && res.body["name"] == null){
                     console.log("logging successfully")
                     setLoginSuceess(true)
+
                 }
             })
     }
