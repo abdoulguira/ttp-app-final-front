@@ -41,7 +41,6 @@ export default function LogIn() {
                 if(res.status === 200 && res.body["name"] == null){
                     console.log("logging successfully")
                     setLoginSuceess(true)
-
                 }
             })
     }

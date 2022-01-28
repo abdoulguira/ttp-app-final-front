@@ -30,9 +30,6 @@ export default function SignUp() {
         if (username.length < 5){
             alert("username need to be at least 5 characters")
         }
-        if (password.length < 8){
-            alert("password need to be at least 8 characters")
-        }
         fetch(newUserAPI, {
             method: "POST",
             mode: "cors",
