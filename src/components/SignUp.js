@@ -30,30 +30,35 @@ export default function SignUp() {
         if (username.length < 5){
             alert("username need to be at least 5 characters")
         }
-        fetch(newUserAPI, {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "username": username,
-                "user_password": password,
-                "email": email,
-                "gender": gender
+        else if (password.length < 8){
+            alert("password need to be at least 8 characters")
+        }
+        else{
+            fetch(newUserAPI, {
+                method: "POST",
+                mode: "cors",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "username": username,
+                    "user_password": password,
+                    "email": email,
+                    "gender": gender
+                })
             })
-        })
-        .then( res =>{
-            if(res.status === 400){
-                alert('something went wrong, please try again')
-            }
-            else{
-                console.log("created user successfully")
-                window.location.href = loggedInAPI+`/${username}/true`
-            }
-        } 
+            .then( res =>{
+                if(res.status === 400){
+                    alert('something went wrong, please try again')
+                }
+                else{
+                    console.log("created user successfully")
+                    window.location.href = loggedInAPI+`/${username}/true`
+                }
+            } 
+        
         )
-    }
+    }}
 
     return (
         <div className="login-page">

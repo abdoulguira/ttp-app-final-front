@@ -13,7 +13,7 @@ export default function NavBarAfter(props) {
             <div>
                 <Link className='link-homepage' to="/">MovieWorld App</Link>
                 <br></br>
-                <h2>Welcome, {props.username}</h2> 
+                <h2>Welcome, {localStorage.getItem("username")}</h2> 
                 <button onClick={handleClick}>Log out</button>
             </div>
         </nav>
